@@ -1,15 +1,17 @@
 <h1 align="center">
   swiftlint-config-pixelmatters
 </h1>
-<img width="80" src="./img/pixelmatters-logo.jpeg" />
+
+<p align="center">
+  <img width="80" src="./img/pixelmatters-logo.jpeg" />
+</p>
 
 <h3 align="center">
   An SwiftLint config standard for Pixelmatters iOS projects
 </h3>
 
-
 <p align="center">
-SwiftLint is a tool to enforce Swift style and conventions.
+  SwiftLint is a tool to enforce Swift style and conventions.
 </p>
 
 <p align="center">
@@ -65,10 +67,20 @@ After to install, move the file `swiftlint.yml` into the same path of your `Proj
 Integrate SwiftLint into your Xcode project to get warnings and errors displayed
 in the issue navigator.
 
-![](/Users/pauloleite/Workspace/swiftlint-config-pixelmatters/screenshot.png)
+![](./img/screenshot.png)
 
 To do this click the Project in the file navigator, then click the primary app
 target, and go to Build Phases. Click the + and select "New Run Script Phase".
+
+### Insert the following as the script for Homebrew setup:
+
+```bash
+if which swiftlint >/dev/null; then
+ swiftlint --config ".swiftlint.yml"
+else
+ echo "warning: SwiftLint not installed, use: brew install swiftlint"
+fi
+```
 
 ### Insert the following as the script for CocoaPods setup:
 
@@ -80,25 +92,15 @@ else
 fi
 ```
 
-### Insert the following as the script for Homebew setup:
-
-```bash
-if which swiftlint >/dev/null; then
- swiftlint --config ".swiftlint.yml"
-else
- echo "warning: SwiftLint not installed, use: brew install swiftlint"
-fi
-```
-
 After that it needs to look like the screenshot:
 
-![](/Users/pauloleite/Workspace/swiftlint-config-pixelmatters/runscript.png)
+![](./img/runscript.png)
 
 ## 🤝 How to Contribute
 
 Whether you're helping us fix bugs, improve the docs, or spread the word, thank you! 💪 🧡
 
-Check out our [**Contributing Guide**](https://github.com/Pixelmatters/eslint-config-pixelmatters/blob/master/CONTRIBUTING.md) for ideas on contributing and setup steps.
+Check out our [**Contributing Guide**](https://github.com/Pixelmatters/swiftlint-config-pixelmatters/blob/main/CONTRIBUTING.md) for ideas on contributing and setup steps.
 
 ## :memo: License
 
